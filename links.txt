@@ -1,0 +1,2 @@
+https://faun.pub/deploy-ai-apps-using-docker-to-containerize-python-based-gen-ai-apps-b29f7f716348
+https://medium.com/@gayani.parameswaran/end-to-end-advanced-rag-project-with-groq-and-open-source-llms-9fa1d5680076
