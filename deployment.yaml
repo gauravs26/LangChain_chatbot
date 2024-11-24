@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: genai-microservice
+  labels:
+    app: genai-microservice
+spec:
+  replicas: 3  # Number of pods for scalability
+  selector:
+    matchLabels:
+      app: genai-microservice
+  template:
+    metadata:
+      labels:
+        app: genai-microservice
+    spec:
+      containers:
+      - name: genai-container
+        image: <YOUR_REGISTRY>/genai-microservice:latest
+        ports:
+        - containerPort: 8000
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 20
