@@ -16,7 +16,7 @@ from chains import (
     load_llm,
 )
 
-groq_api_key = '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'
+groq_api_key = 'your groq api key'
 logger = get_logger(__name__)
 
 def is_valid_url(url):
